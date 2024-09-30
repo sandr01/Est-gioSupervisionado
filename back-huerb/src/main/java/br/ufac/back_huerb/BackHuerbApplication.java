@@ -10,4 +10,5 @@ public class BackHuerbApplication {
 		SpringApplication.run(BackHuerbApplication.class, args);
 	}
 
+	
 }
