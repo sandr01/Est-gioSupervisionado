@@ -8,7 +8,7 @@ public class BackHuerbApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackHuerbApplication.class, args);
+		System.out.println("aloooo");
 	}
 
-	
 }
