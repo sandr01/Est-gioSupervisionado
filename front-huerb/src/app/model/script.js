@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (logoutLink) {
         logoutLink.addEventListener('click', function (event) {
             event.preventDefault();
-            //localStorage.removeItem('userType'); // Remove o tipo de usuário
+            localStorage.removeItem('userType'); // Remove o tipo de usuário
             window.location.href = "login.html"; // Redireciona para a página de login
         });
     }
@@ -55,12 +55,87 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = document.getElementById("password").value;
 
     if (username && password) {
-        localStorage.setItem('userType', userType);
-        alert(`Bem-vindo, ${userType === 'admin' ? 'Administrador' : 'Funcionário Solicitante'} ${username}!`);
-        
-        // Redireciona para a página Home
-        window.location.href = "home.html";
+        // Realiza a autenticação com o back-end
+        fetch('http://localhost:9000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Falha na autenticação');
+            }
+        })
+        .then(data => {
+            // Armazena o token JWT no localStorage para uso posterior
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('userType', userType);
+
+            alert(`Bem-vindo, ${userType === 'admin' ? 'Administrador' : 'Funcionário Solicitante'} ${username}!`);
+            
+            // Redireciona para a página Home
+            window.location.href = "home.html";
+        })
+        .catch(error => {
+            console.error('Erro na autenticação:', error);
+            alert("Usuário ou senha incorretos.");
+        });
     } else {
         alert("Preencha todos os campos!");
     }
 });
+
+// Função para verificar se o usuário está autenticado
+function verificarAutenticacao() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert("Você precisa estar logado para acessar esta página.");
+        window.location.href = "login.html";
+    }
+}
+
+// Função para realizar chamadas autenticadas ao back-end
+function chamadaAutenticada(url, options) {
+    const token = localStorage.getItem('token');
+    if (!options.headers) {
+        options.headers = {};
+    }
+    options.headers['Authorization'] = `Bearer ${token}`;
+
+    return fetch(url, options);
+}
+
+// Exemplo de chamada autenticada para obter as solicitações
+function carregarSolicitacoes() {
+    chamadaAutenticada('http://localhost:9000/api/solicitacoes', {
+        method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => {
+        const tableBody = document.querySelector('#solicitacoes-table tbody');
+        tableBody.innerHTML = '';
+
+        data.forEach(solicitacao => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${solicitacao.id}</td>
+                <td>${solicitacao.usuario.nome}</td>
+                <td>${solicitacao.equipamento.nome}</td>
+                <td>${solicitacao.quantidade}</td>
+                <td>${new Date(solicitacao.dataSolicitacao).toLocaleString('pt-BR')}</td>
+                <td>${solicitacao.status}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        console.error('Erro ao carregar as solicitações:', error);
+    });
+}
