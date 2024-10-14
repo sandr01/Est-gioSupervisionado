@@ -1,1 +1,12 @@
 o front ta dentro da pasta resources/templates no backend
+Trocar o spring.jpa.hibernate.ddl-auto=update, por create-drop para criar o banco de dados(caso não tenha)
+
+Para criar usuarios, rode o spring-boot e faça uma requisição POST->body->raw->JSON no postman http://localhost:9000/api/usuarios/cadastrar, nesse formato:
+
+{
+    "email": "novo.usuario@example.com",
+    "password": "senhaSegura123",
+    "userType": "solicitante" //troque para admin se quiser ver a página do administrador
+}
+
+
