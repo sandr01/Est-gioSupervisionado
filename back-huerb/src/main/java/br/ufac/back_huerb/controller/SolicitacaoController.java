@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/solicitacoes")
@@ -19,6 +20,7 @@ public class SolicitacaoController {
     // Endpoint para criar uma nova solicitação
     @PostMapping("/criar")
     public ResponseEntity<Solicitacao> criarSolicitacao(@RequestBody Solicitacao solicitacao) {
+        solicitacao.setDataSolicitacao(LocalDate.now());
         Solicitacao novaSolicitacao = solicitacaoService.criarSolicitacao(solicitacao);
         return ResponseEntity.ok(novaSolicitacao);
     }

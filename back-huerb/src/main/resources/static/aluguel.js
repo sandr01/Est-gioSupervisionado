@@ -7,12 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Coletando os valores do formulário
             const matricula = document.getElementById("matricula").value;
+            const solicitante = document.getElementById("solicitante").value;
             const equipamento = document.getElementById("equipamento").value;
             const dataRetirada = document.getElementById("dataRetirada").value;
             const dataDevolucao = document.getElementById("dataDevolucao").value;
 
             // Verifica se todos os campos estão preenchidos
-            if (!matricula || !equipamento || !dataRetirada || !dataDevolucao) {
+            if (!matricula || !solicitante  || !equipamento || !dataRetirada || !dataDevolucao) {
                 alert("Preencha todos os campos!");
                 return;
             }
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify({
                     matricula: matricula,
+                    solicitante: solicitante,
                     equipamento: equipamento,
                     dataRetirada: dataRetirada,
                     dataDevolucao: dataDevolucao
