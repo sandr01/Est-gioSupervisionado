@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Solicitações de Equipamentos</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
     <div class="container">
         <div class="sidebar" id="menu">
             <nav>
                 <ul>
+                    <!-- O menu será preenchido dinamicamente via JavaScript -->
                     <li><a href="home.html">Home</a></li>
                     <li><a href="cadastro.html">Cadastro</a></li>
                     <li><a href="solicitacoes.html">Solicitações</a></li>
@@ -21,32 +22,27 @@
         </div>
 
         <div class="content">
-            <h2>Estoque de Equipamentos</h2>
+            <h2>Solicitações de Equipamentos</h2>
             <div class="table">
                 <table>
                     <thead>
                         <tr>
+                            <th>Matrícula</th>
+                            <th>Solicitante</th>
                             <th>Equipamento</th>
-                            <th>Quantidade Disponível</th>
-                            <th>Em Aluguel</th>
+                            <th>Data de Solicitação</th>
+                            <th>Status</th>
+                            <th>Ação</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Notebook</td>
-                            <td>15</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>Projetor</td>
-                            <td>8</td>
-                            <td>2</td>
-                        </tr>
+                    <tbody id="solicitacoesBody">
+                        <!-- As linhas serão preenchidas dinamicamente via JavaScript -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="../static/solicitacoes.js"></script>
 </body>
 </html>

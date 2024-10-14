@@ -5,27 +5,53 @@ import java.time.LocalDate;
 
 @Entity
 public class Solicitacao {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String matricula;
+    private String solicitante;
+    private String equipamento;
     private LocalDate dataSolicitacao;
-    private String status; // PENDENTE, APROVADA, REJEITADA
+    private LocalDate dataRetirada;
+    private LocalDate dataDevolucao;
 
-    @ManyToOne
-    private Usuario usuario;
-
-    @ManyToOne
-    private Equipamento equipamento;
-
-    private int quantidade;
+    @Enumerated(EnumType.STRING)
+    private StatusSolicitacao status;
 
     // Getters e Setters
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getSolicitante() {
+        return solicitante;
+    }
+
+    public void setSolicitante(String solicitante) {
+        this.solicitante = solicitante;
+    }
+
+    public String getEquipamento() {
+        return equipamento;
+    }
+
+    public void setEquipamento(String equipamento) {
+        this.equipamento = equipamento;
     }
 
     public LocalDate getDataSolicitacao() {
@@ -36,35 +62,27 @@ public class Solicitacao {
         this.dataSolicitacao = dataSolicitacao;
     }
 
-    public String getStatus() {
+    public LocalDate getDataRetirada() {
+        return dataRetirada;
+    }
+
+    public void setDataRetirada(LocalDate dataRetirada) {
+        this.dataRetirada = dataRetirada;
+    }
+
+    public LocalDate getDataDevolucao() {
+        return dataDevolucao;
+    }
+
+    public void setDataDevolucao(LocalDate dataDevolucao) {
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    public StatusSolicitacao getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusSolicitacao status) {
         this.status = status;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Equipamento getEquipamento() {
-        return equipamento;
-    }
-
-    public void setEquipamento(Equipamento equipamento) {
-        this.equipamento = equipamento;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
     }
 }

@@ -33,7 +33,7 @@ public class EquipamentoService {
     public Equipamento atualizarEquipamento(Long id, Equipamento equipamentoAtualizado) {
         return equipamentoRepository.findById(id)
             .map(equipamento -> {
-                equipamento.setNome(equipamentoAtualizado.getNome());
+                equipamento.setEquipamento(equipamentoAtualizado.getEquipamento());
                 equipamento.setQuantidade(equipamentoAtualizado.getQuantidade());
                 equipamento.setDescricao(equipamentoAtualizado.getDescricao());
                 return equipamentoRepository.save(equipamento);

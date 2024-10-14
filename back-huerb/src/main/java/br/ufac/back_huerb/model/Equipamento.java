@@ -1,16 +1,20 @@
 package br.ufac.back_huerb.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class Equipamento {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
+
+    private String matricula;
+    
+    private LocalDate data;
+
+    private String equipamento;
     private int quantidade;
     private String descricao;
 
@@ -23,12 +27,28 @@ public class Equipamento {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getMatricula() {
+        return matricula;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public String getEquipamento() {
+        return equipamento;
+    }
+
+    public void setEquipamento(String equipamento) {
+        this.equipamento = equipamento;
     }
 
     public int getQuantidade() {

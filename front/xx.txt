@@ -1,0 +1,1 @@
+o front ta dentro da pasta resources/templates no backend

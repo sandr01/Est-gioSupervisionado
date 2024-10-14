@@ -1,6 +1,7 @@
 package br.ufac.back_huerb.controller;
 
 import br.ufac.back_huerb.model.Solicitacao;
+import br.ufac.back_huerb.model.StatusSolicitacao;
 import br.ufac.back_huerb.service.SolicitacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,21 +16,29 @@ public class SolicitacaoController {
     @Autowired
     private SolicitacaoService solicitacaoService;
 
-    @PostMapping("/cadastrar")
-    public ResponseEntity<Solicitacao> cadastrarSolicitacao(@RequestBody Solicitacao solicitacao) {
-        Solicitacao novaSolicitacao = solicitacaoService.salvarSolicitacao(solicitacao);
+    // Endpoint para criar uma nova solicitação
+    @PostMapping("/criar")
+    public ResponseEntity<Solicitacao> criarSolicitacao(@RequestBody Solicitacao solicitacao) {
+        Solicitacao novaSolicitacao = solicitacaoService.criarSolicitacao(solicitacao);
         return ResponseEntity.ok(novaSolicitacao);
     }
 
-    @GetMapping
+    // Endpoint para listar todas as solicitações
+    @GetMapping("/listar")
     public ResponseEntity<List<Solicitacao>> listarSolicitacoes() {
         return ResponseEntity.ok(solicitacaoService.listarSolicitacoes());
     }
 
-    @PutMapping("/{id}/status")
-    public ResponseEntity<Solicitacao> atualizarStatusSolicitacao(
-            @PathVariable Long id, @RequestParam String status) {
+    // Endpoint para atualizar o status da solicitação
+    @PutMapping("/atualizar/{id}")
+    public ResponseEntity<Solicitacao> atualizarStatus(@PathVariable Long id, @RequestBody StatusSolicitacao status) {
         Solicitacao solicitacaoAtualizada = solicitacaoService.atualizarStatus(id, status);
         return ResponseEntity.ok(solicitacaoAtualizada);
+    }
+
+    // Endpoint para listar as solicitações aprovadas (relatório)
+    @GetMapping("/aprovadas")
+    public ResponseEntity<List<Solicitacao>> listarSolicitacoesAprovadas() {
+        return ResponseEntity.ok(solicitacaoService.listarSolicitacoesAprovadas());
     }
 }

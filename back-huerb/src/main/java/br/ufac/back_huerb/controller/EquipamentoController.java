@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.time.LocalDate;
+
 
 @RestController
 @RequestMapping("/api/equipamentos")
@@ -17,13 +19,15 @@ public class EquipamentoController {
 
     @PostMapping("/cadastrar")
     public ResponseEntity<Equipamento> cadastrarEquipamento(@RequestBody Equipamento equipamento) {
+        equipamento.setData(LocalDate.now());
         Equipamento novoEquipamento = equipamentoService.salvarEquipamento(equipamento);
         return ResponseEntity.ok(novoEquipamento);
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<Equipamento>> listarEquipamentos() {
-        return ResponseEntity.ok(equipamentoService.listarEquipamentos());
+        List<Equipamento> equipamentos = equipamentoService.listarEquipamentos();
+        return ResponseEntity.ok(equipamentos);
     }
 
     @DeleteMapping("/{id}")

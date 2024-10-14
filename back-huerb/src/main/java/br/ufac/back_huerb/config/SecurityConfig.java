@@ -19,7 +19,12 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/usuarios/cadastrar").permitAll()
                 .requestMatchers("/api/equipamentos/cadastrar").permitAll()
-                .requestMatchers("/api/solicitacoes/cadastrar").permitAll()
+                .requestMatchers("/api/equipamentos/listar").permitAll()
+                .requestMatchers("/api/login").permitAll()
+                .requestMatchers("/api/solicitacoes/criar").permitAll()
+                .requestMatchers("/api/solicitacoes/listar").permitAll()
+                .requestMatchers("/api/solicitacoes/aprovadas").permitAll()
+                .requestMatchers("/api/solicitacoes/atualizar/{id}").permitAll()
                 .requestMatchers("/api/**").authenticated()
             )
             .formLogin(form -> form.permitAll())

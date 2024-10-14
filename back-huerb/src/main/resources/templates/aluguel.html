@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aluguel</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
     <div class="container">
@@ -19,23 +19,23 @@
 
         <div class="content">
             <h2>Aluguel de Equipamentos</h2>
-            <form>
+            <form id="aluguelForm">
                 <label for="matricula">Matrícula:</label>
                 <input type="text" id="matricula" name="matricula" required>
 
                 <label for="equipamento">Equipamento:</label>
                 <input type="text" id="equipamento" name="equipamento" required>
 
-                <label for="data-retirada">Data de Retirada:</label>
-                <input type="date" id="data-retirada" name="data-retirada" required>
+                <label for="dataRetirada">Data de Retirada:</label>
+                <input type="date" id="dataRetirada" name="dataRetirada" required>
 
-                <label for="data-devolucao">Data de Devolução:</label>
-                <input type="date" id="data-devolucao" name="data-devolucao" required>
+                <label for="dataDevolucao">Data de Devolução:</label>
+                <input type="date" id="dataDevolucao" name="dataDevolucao" required>
 
                 <button type="submit">Alugar</button>
             </form>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../static/aluguel.js"></script>
 </body>
 </html>

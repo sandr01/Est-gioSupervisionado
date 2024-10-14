@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Relatório de Aluguéis</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
     <div class="container">
@@ -21,32 +21,26 @@
         </div>
 
         <div class="content">
-            <h2>Estoque de Equipamentos</h2>
+            <h2>Relatório de Aluguéis</h2>
             <div class="table">
                 <table>
                     <thead>
                         <tr>
+                            <th>Matrícula</th>
+                            <th>Solicitante</th>
                             <th>Equipamento</th>
-                            <th>Quantidade Disponível</th>
-                            <th>Em Aluguel</th>
+                            <th>Data de Retirada</th>
+                            <th>Data de Devolução</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Notebook</td>
-                            <td>15</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>Projetor</td>
-                            <td>8</td>
-                            <td>2</td>
-                        </tr>
+                        <!-- As linhas serão adicionadas dinamicamente via JavaScript -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../static/script.js"></script>
 </body>
 </html>
