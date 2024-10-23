@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Menu para Administrador (sem Aluguel, com Solicitações)
                 menu.innerHTML = `
                     <li><a href="home.html">Home</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="cadastro.html">Cadastro de Equipamentos</a></li>
                     <li><a href="cadastroUsuario.html">Cadastro de Usuários</a></li>
                     <li><a href="solicitacoes.html">Solicitações</a></li>
                     <li><a href="estoque.html">Estoque</a></li>
