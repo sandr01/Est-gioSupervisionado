@@ -71,7 +71,6 @@ document.getElementById("cadastroForm").addEventListener("submit", function(even
     .then(response => response.json())
     .then(novoEquipamento => {
         // Adiciona o novo equipamento diretamente na tabela após o cadastro
-        adicionarEquipamentoNaTabela(novoEquipamento);
         alert("Equipamento cadastrado com sucesso!");
 
         // Limpa o formulário

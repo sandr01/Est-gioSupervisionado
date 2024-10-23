@@ -16,31 +16,32 @@
                     <li><a href="solicitacoes.html">Solicitações</a></li>
                     <li><a href="estoque.html">Estoque</a></li>
                     <li><a href="relatorio.html">Relatório</a></li>
+                    <li><a href="logout.html">Logout</a></li>
                 </ul>
             </nav>
         </div>
 
-        <div class="content">
+        <main class="content">
             <h2>Relatório de Aluguéis</h2>
-            <div class="table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Matrícula</th>
-                            <th>Solicitante</th>
-                            <th>Equipamento</th>
-                            <th>Data de Retirada</th>
-                            <th>Data de Devolução</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- As linhas serão adicionadas dinamicamente via JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Solicitante</th>
+                        <th>Equipamento</th>
+                        <th>Data de Retirada</th>
+                        <th>Data de Devolução</th>
+                        <th>Status</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="relatorio-table">
+                    <!-- As solicitações aprovadas serão preenchidas dinamicamente -->
+                </tbody>
+            </table>
+        </main>
     </div>
-    <script src="../static/script.js"></script>
+
+    <script src="../static/relatorio.js"></script>
 </body>
 </html>

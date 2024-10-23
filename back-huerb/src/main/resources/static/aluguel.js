@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const equipamento = document.getElementById("equipamento").value;
             const dataRetirada = document.getElementById("dataRetirada").value;
             const dataDevolucao = document.getElementById("dataDevolucao").value;
+            const descricao = document.getElementById("descricao").value;
 
             // Verifica se todos os campos estão preenchidos
-            if (!matricula || !solicitante  || !equipamento || !dataRetirada || !dataDevolucao) {
+            if (!matricula || !solicitante  || !equipamento || !dataRetirada || !dataDevolucao || !descricao) {
                 alert("Preencha todos os campos!");
                 return;
             }
@@ -29,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     solicitante: solicitante,
                     equipamento: equipamento,
                     dataRetirada: dataRetirada,
-                    dataDevolucao: dataDevolucao
+                    dataDevolucao: dataDevolucao,
+                    descricao: descricao
                 })
             })
             .then(response => response.json())

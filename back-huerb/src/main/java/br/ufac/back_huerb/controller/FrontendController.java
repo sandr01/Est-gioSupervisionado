@@ -20,6 +20,10 @@ public class FrontendController {
     public String cadastro() {
         return "cadastro"; // Retorna o arquivo cadastro.html
     }
+    @GetMapping("/cadastroUsuario")
+    public String cadastroUsuario() {
+        return "cadastroUsuario"; // Retorna o arquivo cadastro.html
+    }
 
     @GetMapping("/aluguel")
     public String aluguel() {

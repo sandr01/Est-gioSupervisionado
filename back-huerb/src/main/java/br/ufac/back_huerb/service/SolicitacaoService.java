@@ -37,4 +37,12 @@ public class SolicitacaoService {
     public List<Solicitacao> listarSolicitacoesAprovadas() {
         return solicitacaoRepository.findByStatus(StatusSolicitacao.APROVADO);
     }
+
+    public Solicitacao marcarComoDevolvido(Long id) {
+        Solicitacao solicitacao = solicitacaoRepository.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Solicitação não encontrada"));
+
+        solicitacao.setStatus(StatusSolicitacao.DEVOLVIDO);
+        return solicitacaoRepository.save(solicitacao);
+    }
 }

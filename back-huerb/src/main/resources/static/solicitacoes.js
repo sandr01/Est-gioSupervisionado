@@ -20,10 +20,12 @@ function adicionarSolicitacaoNaTabela(solicitacao) {
     novaLinha.insertCell(0).textContent = solicitacao.matricula;
     novaLinha.insertCell(1).textContent = solicitacao.solicitante;
     novaLinha.insertCell(2).textContent = solicitacao.equipamento;
-    novaLinha.insertCell(3).textContent = new Date(solicitacao.dataSolicitacao).toLocaleDateString('pt-BR');
-    novaLinha.insertCell(4).textContent = solicitacao.status;
+    novaLinha.insertCell(3).textContent = new Date(solicitacao.dataRetirada).toLocaleDateString('pt-BR');
+    novaLinha.insertCell(4).textContent = new Date(solicitacao.dataDevolucao).toLocaleDateString('pt-BR');
+    novaLinha.insertCell(5).textContent = solicitacao.status;
+    novaLinha.insertCell(6).textContent = solicitacao.descricao;
 
-    const acoesCelula = novaLinha.insertCell(5);
+    const acoesCelula = novaLinha.insertCell(7);
 
     if (solicitacao.status === "PENDENTE") {
         const botaoAprovar = document.createElement("button");
@@ -62,7 +64,6 @@ function atualizarStatusSolicitacao(id, status) {
     })
     .then(response => response.json())
     .then(data => {
-        alert("Status atualizado com sucesso!");
         window.location.reload(); // Recarrega a página
     })
     .catch(error => {

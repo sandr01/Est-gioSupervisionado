@@ -16,6 +16,7 @@ public class Solicitacao {
     private LocalDate dataSolicitacao;
     private LocalDate dataRetirada;
     private LocalDate dataDevolucao;
+    private String descricao;
 
     @Enumerated(EnumType.STRING)
     private StatusSolicitacao status;
@@ -84,5 +85,13 @@ public class Solicitacao {
 
     public void setStatus(StatusSolicitacao status) {
         this.status = status;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 }

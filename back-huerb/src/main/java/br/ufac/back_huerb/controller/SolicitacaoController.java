@@ -3,7 +3,10 @@ package br.ufac.back_huerb.controller;
 import br.ufac.back_huerb.model.Solicitacao;
 import br.ufac.back_huerb.model.StatusSolicitacao;
 import br.ufac.back_huerb.service.SolicitacaoService;
+
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,10 +23,9 @@ public class SolicitacaoController {
     // Endpoint para criar uma nova solicitação
     @PostMapping("/criar")
     public ResponseEntity<Solicitacao> criarSolicitacao(@RequestBody Solicitacao solicitacao) {
-        solicitacao.setDataSolicitacao(LocalDate.now());
         Solicitacao novaSolicitacao = solicitacaoService.criarSolicitacao(solicitacao);
-        return ResponseEntity.ok(novaSolicitacao);
-    }
+        return ResponseEntity.status(HttpStatus.CREATED).body(novaSolicitacao);
+   }
 
     // Endpoint para listar todas as solicitações
     @GetMapping("/listar")
@@ -42,5 +44,12 @@ public class SolicitacaoController {
     @GetMapping("/aprovadas")
     public ResponseEntity<List<Solicitacao>> listarSolicitacoesAprovadas() {
         return ResponseEntity.ok(solicitacaoService.listarSolicitacoesAprovadas());
+    }
+
+    // Endpoint para marcar como devolvido
+    @PutMapping("/marcarDevolvido/{id}")
+    public ResponseEntity<Solicitacao> marcarComoDevolvido(@PathVariable Long id) {
+        Solicitacao solicitacaoAtualizada = solicitacaoService.marcarComoDevolvido(id);
+        return ResponseEntity.ok(solicitacaoAtualizada);
     }
 }

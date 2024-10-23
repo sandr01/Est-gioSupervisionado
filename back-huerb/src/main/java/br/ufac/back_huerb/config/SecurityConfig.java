@@ -24,6 +24,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/solicitacoes/criar").permitAll()
                 .requestMatchers("/api/solicitacoes/listar").permitAll()
                 .requestMatchers("/api/solicitacoes/aprovadas").permitAll()
+                .requestMatchers("/api/solicitacoes/marcarDevolvido").permitAll()
                 .requestMatchers("/api/solicitacoes/atualizar/{id}").permitAll()
                 .requestMatchers("/api/**").authenticated()
             )

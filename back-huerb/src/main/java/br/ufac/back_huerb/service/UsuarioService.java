@@ -24,6 +24,19 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
+    public Usuario cadastrarUsuario(Usuario usuario) {
+        if (usuario.getPassword() == null || usuario.getPassword().isEmpty()) {
+            throw new IllegalArgumentException("A senha não pode ser nula.");
+        }
+
+        // Certifique-se de que o tipo está setado corretamente
+        if (usuario.getUserType() == null || usuario.getUserType().isEmpty()) {
+            usuario.setUserType("SOLICITANTE");  // Define um tipo padrão, se necessário
+        }
+
+        return usuarioRepository.save(usuario);
+    }
+
     // Método para salvar um novo usuário e retornar o usuário salvo
     @Transactional
     public Usuario salvarUsuario(Usuario usuario) {
