@@ -6,6 +6,11 @@ Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisio
 - **[Alessandro Silva](https://github.com/sandr01)** 
 - **[Igor Gardiny](https://github.com/Gardiny)**
 
+<a href="https://github.com/sandr01/Est-gioSupervisionado/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sandr01/Est-gioSupervisionado" />
+</a>
+
+
 ## Descrição do Projeto
 Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e relatórios de equipamentos utilizados no setor de TI.
 
@@ -22,30 +27,28 @@ Para executar o sistema, siga as etapas abaixo:
 - Crie um banco de dados com o nome desejado.
 - Importe o arquivo de script SQL.
 
-### 2. Backend (Spring Boot)
-<summary>
-    <h2>Como inciar a aplicação</h2>
-</summary>
+### 2. Como inciar a aplicação
 
 <h3>Back-end</h3>
 
-    A aplicação back-end pode ser iniciada pelo Spring Boot Dashboard ou com o Maven.
+A aplicação back-end pode ser iniciada pelo Spring Boot Dashboard ou com o Maven.
 
-    1. Se optar pelo Maven, no prompt de comandos, a partir do diretório `./back-huerb`:
+1. Se optar pelo Maven, no prompt de comandos, a partir do diretório `./back-huerb`:
 
-    a. Para iniciar a aplicação com o Maven:
+a. Para iniciar a aplicação com o Maven:
 
     ```console
-            mvn spring-boot:run
+        mvn spring-boot:run
     ```
-            Ou
+Ou
 
-            b. Para compilar o pacote e depois executar o JAR gerado:
+b. Para compilar o pacote e depois executar o JAR gerado:
 
     ```console
     mvn package
     java -jar target\sgcmapi.jar
     ```
+
 > [!IMPORTANT]
 > A aplicação vai iniciar no endereço <https://localhost:9000/>, com acesso local a base de dados MySQL, por meio da porta padrão 3306, além de usuário e senha "root".
 
@@ -65,3 +68,7 @@ Para executar o sistema, siga as etapas abaixo:
 
 > [!IMPORTANT]
 > O frontend será executado em http://localhost:4200.
+
+
+## License
+Huerb é licenciado sob a [MIT License](LICENSE).
