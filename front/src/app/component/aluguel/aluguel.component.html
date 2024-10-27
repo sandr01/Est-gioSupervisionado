@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="menu">
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="aluguel.html">Aluguel</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <h2>Aluguel de Equipamentos</h2>
+            <form id="aluguelForm">
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" required>
+
+                <label for="Solicitante">Nome:</label>
+                <input type="text" id="solicitante" name="solicitante" required>
+
+                <label for="equipamento">Equipamento:</label>
+                <input type="text" id="equipamento" name="equipamento" required>
+
+                <label for="dataRetirada">Data de Retirada:</label>
+                <input type="date" id="dataRetirada" name="dataRetirada" required>
+
+                <label for="dataDevolucao">Data de Devolução:</label>
+                <input type="date" id="dataDevolucao" name="dataDevolucao" required>
+
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" required>
+
+                <button type="submit">Alugar</button>
+            </form>
+        </div>
+    </div>
+        <!-- Footer -->
+        <footer class="#">
+            <div class="#">
+                <div class="text-muted">Copyright &copy; todos os direitos reservados - Controle de Estoque do Setor de TI da HUERB</div>
+            </div>
+            <div>
+                <a href="#">Política de privacidade</a>
+               &middot;
+               <a href="#">Termos &amp; Condições</a>
+           </div>
+        </footer>
+    <script src="../static/aluguel.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<div class="content">
+    <h2>Solicitações de Equipamentos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Matrícula</th>
+                <th>Solicitante</th>
+                <th>Equipamento</th>
+                <th>Data de Retirada</th>
+                <th>Data de Devolução</th>
+                <th>Status</th>
+                <th>Descrição</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let solicitacao of solicitacoes">
+                <td>{{ solicitacao.matricula }}</td>
+                <td>{{ solicitacao.solicitante }}</td>
+                <td>{{ solicitacao.equipamento }}</td>
+                <td>{{ solicitacao.dataRetirada | date:'dd/MM/yyyy' }}</td>
+                <td>{{ solicitacao.dataDevolucao | date:'dd/MM/yyyy' }}</td>
+                <td>{{ solicitacao.status }}</td>
+                <td>{{ solicitacao.descricao }}</td>
+                <td>
+                    <button *ngIf="solicitacao.status === 'PENDENTE'" (click)="atualizarStatus(solicitacao.id, 'APROVADO')">Aprovar</button>
+                    <button *ngIf="solicitacao.status === 'PENDENTE'" (click)="atualizarStatus(solicitacao.id, 'REJEITADO')">Recusar</button>
+                    <button *ngIf="solicitacao.status === 'APROVADO'">Visualizar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
