@@ -3,8 +3,6 @@
 Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisionado do curso de Sistemas de Informação na Universidade Federal do Acre.
 
 ## Equipe
-- **[Alessandro Silva](https://github.com/sandr01)** 
-- **[Igor Gardiny](https://github.com/Gardiny)**
 
 <a href="https://github.com/sandr01/Est-gioSupervisionado/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sandr01/Est-gioSupervisionado" />
