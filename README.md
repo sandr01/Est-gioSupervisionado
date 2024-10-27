@@ -53,7 +53,7 @@ b. Para compilar o pacote e depois executar o JAR gerado:
 
 <h3>Front-end</h3>
 
-As dependências do projeto não são compartilhadas no repositório. Para instalar as dependências, a partir do diretório `./sgcmapp`, no prompt de comandos, digite:
+As dependências do projeto não são compartilhadas no repositório. Para instalar as dependências, a partir do diretório `./front`, no prompt de comandos, digite:
 
 ```console
     npm install
