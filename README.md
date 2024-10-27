@@ -42,27 +42,32 @@ Ou
 
 b. Para compilar o pacote e depois executar o JAR gerado:
 
-    ```console
+```console
+
     mvn package
+
     java -jar target\sgcmapi.jar
-    ```
+
+```
 
 > [!IMPORTANT]
 > A aplicação vai iniciar no endereço <https://localhost:9000/>, com acesso local a base de dados MySQL, por meio da porta padrão 3306, além de usuário e senha "root".
 
 <h3>Front-end</h3>
 
-     As dependências do projeto não são compartilhadas no repositório. Para instalar as dependências, a partir do diretório `./sgcmapp`, no prompt de comandos, digite:
+As dependências do projeto não são compartilhadas no repositório. Para instalar as dependências, a partir do diretório `./sgcmapp`, no prompt de comandos, digite:
 
-        ```console
-        npm install
-        ```
+```console
 
-        Para iniciar a aplicação, a partir do diretório `./front`, execute o comando:
+    npm install
+    
+```
 
-        ```console
-        ng serve
-        ```
+Para iniciar a aplicação, a partir do diretório `./front`, execute o comando:
+
+```console
+    ng serve
+```
 
 > [!IMPORTANT]
 > O frontend será executado em http://localhost:4200.
