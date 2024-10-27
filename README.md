@@ -35,19 +35,17 @@ A aplicação back-end pode ser iniciada pelo Spring Boot Dashboard ou com o Mav
 
 a. Para iniciar a aplicação com o Maven:
 
-    ```console
-        mvn spring-boot:run
-    ```
+```console
+    mvn spring-boot:run
+```
 Ou
 
 b. Para compilar o pacote e depois executar o JAR gerado:
 
 ```console
-
     mvn package
 
     java -jar target\sgcmapi.jar
-
 ```
 
 > [!IMPORTANT]
@@ -58,9 +56,7 @@ b. Para compilar o pacote e depois executar o JAR gerado:
 As dependências do projeto não são compartilhadas no repositório. Para instalar as dependências, a partir do diretório `./sgcmapp`, no prompt de comandos, digite:
 
 ```console
-
     npm install
-    
 ```
 
 Para iniciar a aplicação, a partir do diretório `./front`, execute o comando:
