@@ -10,24 +10,25 @@
     <div class="container">
         <div class="sidebar" id="menu">
             <nav *ngIf="isLoggedIn()">
-                        <ul>
-                            <li><a routerLink="/home">Home</a></li>
-                            <li><a routerLink="/cadastro-equipamento">Cadastro de Equipamentos</a></li>
-                            <li><a routerLink="/cadastro-usuario">Cadastro de Usuários</a></li>
-                            <li><a routerLink="/estoque">Solicitações</a></li>
-                            <li><a routerLink="/relatorio">Estoque</a></li>
-                            <li><a routerLink="/solicitações">Relatório</a></li>
-                            <li><a routerLink="/login">Logout</a></li>
-                        </ul>
+                <ul>
+                    <li><a routerLink="/home">Home</a></li>
+                    <li><a routerLink="/cadastro-equipamento">Cadastro de Equipamentos</a></li>
+                    <li><a routerLink="/cadastro-usuario">Cadastro de Usuários</a></li>
+                    <li><a routerLink="/solicitações">Solicitações</a></li>
+                    <li><a routerLink="/estoque">Estoque</a></li>
+                    <li><a routerLink="/relatorio">Relatório</a></li>
+                    <li><a routerLink="/login">Logout</a></li>
+                </ul>
             </nav>
         </div>
-    </div>    
+        <main id="main">
+            <app-alerta></app-alerta>
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+    <footer>
+        <span>Copyright &copy; todos os direitos reservados - Controle de Estoque do Setor de TI da HUERB</span>
+        <span>Suporte técnico: (68) 8888-8888 | <a href="mailto:aluno.sistemas@ufac.br">aluno.sistemas&#64;ufac.br</a></span>
+    </footer>
 </body>
-<main id="main">
-    <app-alerta></app-alerta>
-    <router-outlet></router-outlet>
-</main>
-<footer>
-    <span>Copyright &copy; todos os direitos reservados - Controle de Estoque do Setor de TI da HUERB</span>
-    <span>Suporte técnico: (68) 8888-8888 | <a href="mailto:aluno.sistemas@ufac.br">aluno.sistemas&#64;ufac.br</a></span>
-</footer>
+

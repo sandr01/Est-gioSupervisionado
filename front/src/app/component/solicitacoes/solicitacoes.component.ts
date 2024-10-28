@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SolicitacoesService } from '../solicitacoes.service';
+import { SolicitacoesService } from '../../service/solicitacoes.service';
+
 
 @Component({
   selector: 'app-solicitacoes',

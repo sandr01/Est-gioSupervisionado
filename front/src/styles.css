@@ -17,15 +17,15 @@ body {
 /* Layout básico */
 .container {
     display: flex;
-    flex: 1;
+    flex-direction: row; /* Garante que sidebar e conteúdo fiquem lado a lado */
+    height: 100vh;       /* Usa toda a altura da viewport */
 }
 
 .sidebar {
     background-color: #2c3e50;
     padding: 20px;
-    width: 220px;
+    width: 220px;        /* Largura fixa para a sidebar */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    height: 100vh;
 }
 
 .sidebar nav ul {
@@ -55,10 +55,12 @@ body {
     background-color: #16a085;
 }
 
+main {
+    flex-grow: 1;        /* Ocupa o restante do espaço ao lado da sidebar */
+}
 /* Conteúdo principal */
 .content {
     padding: 40px;
-    width: 100%;
     background-color: #ecf0f1;
     overflow-y: auto;
 }
