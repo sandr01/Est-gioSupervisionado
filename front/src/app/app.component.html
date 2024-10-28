@@ -1,39 +1,33 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<a class="skip-link" [routerLink]="currentUrl" fragment="main">
+</a>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Sistema de Gestão</title>
+    <link rel="stylesheet" href="/front/src/styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-form">
-          <img src="login.png" alt="Imagem de Login" class="login-image">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="username">Nome de Usuário:</label>
-                <input type="text" id="username" name="username" required>
-
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="submit">Entrar</button>
-            </form>
+    <div class="container">
+        <div class="sidebar" id="menu">
+            <nav *ngIf="isLoggedIn()">
+                        <ul>
+                            <li><a routerLink="/home">Home</a></li>
+                            <li><a routerLink="/cadastro-equipamento">Cadastro de Equipamentos</a></li>
+                            <li><a routerLink="/cadastro-usuario">Cadastro de Usuários</a></li>
+                            <li><a routerLink="/estoque">Solicitações</a></li>
+                            <li><a routerLink="/relatorio">Estoque</a></li>
+                            <li><a routerLink="/solicitações">Relatório</a></li>
+                            <li><a routerLink="/login">Logout</a></li>
+                        </ul>
+            </nav>
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="#">
-        <div class="#">
-            <div class="text-muted">Copyright &copy; todos os direitos reservados - Controle de Estoque do Setor de TI da HUERB</div>
-        </div>
-        <div>
-            <a href="#">Política de privacidade</a>
-           &middot;
-           <a href="#">Termos &amp; Condições</a>
-       </div>
-    </footer>
+    </div>    
 </body>
-</html>
-<router-outlet></router-outlet>
+<main id="main">
+    <app-alerta></app-alerta>
+    <router-outlet></router-outlet>
+</main>
+<footer>
+    <span>Copyright &copy; todos os direitos reservados - Controle de Estoque do Setor de TI da HUERB</span>
+    <span>Suporte técnico: (68) 8888-8888 | <a href="mailto:aluno.sistemas@ufac.br">aluno.sistemas&#64;ufac.br</a></span>
+</footer>
