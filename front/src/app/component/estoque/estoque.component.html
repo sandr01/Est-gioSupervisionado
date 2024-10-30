@@ -1,18 +1,26 @@
-        <div class="content">
-            <h2>Estoque de Equipamentos</h2><br>
-            <div class="table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Matrícula</th>
-                            <th>Data</th>
-                            <th>Equipamento</th>
-                            <th>Quantidade</th>
-                            <th>Descrição</th>
-                        </tr>
-                    </thead>
-                    <tbody id="estoque-table">
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<div class="content">
+    <h2>Estoque de Equipamentos</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Matrícula</th>
+            <th>Data</th>
+            <th>Equipamento</th>
+            <th>Quantidade</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let equipamento of equipamentos">
+            <td>{{ equipamento.matricula }}</td>
+            <td>{{ equipamento.data }}</td>
+            <td>{{ equipamento.equipamento }}</td>
+            <td>{{ equipamento.quantidade }}</td>
+            <td>{{ equipamento.descricao }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
