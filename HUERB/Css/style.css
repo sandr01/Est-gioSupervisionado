@@ -1,0 +1,335 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout básico */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: #2c3e50;
+    padding: 20px;
+    width: 220px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #1abc9c;
+}
+
+.sidebar nav ul li a.active {
+    background-color: #16a085;
+}
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+/* Conteúdo principal */
+.content {
+    padding: 40px;
+    width: 100%;
+    background-color: #ecf0f1;
+    overflow-y: auto;
+}
+
+/* Formulários gerais */
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+form button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: #34495e;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+.table tr:hover {
+    background-color: #ecf0f1;
+    cursor: pointer;
+}
+
+.table td {
+    color: #2c3e50;
+}
+
+.table th:first-child, .table td:first-child {
+    padding-left: 20px;
+}
+
+.table th:last-child, .table td:last-child {
+    padding-right: 20px;
+}
+
+.cancel-button {
+    background-color: #f44336; 
+    color: #ffffff; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+.cancel-button:hover {
+    background-color: #7c1d3d; 
+}
+.update-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+.update-button:hover {
+    background-color: #214157;
+}
+
+/* Página de Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    /* background-image: url('../img/');
+    background-size: cover;
+    background-position: center; */
+}
+
+
+.login-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.login-form input, .login-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.login-form button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login-form button:hover {
+    background-color: #2980b9;
+}
+
+.login-image {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .table table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #bfbfbf; /* Cinza médio */
+    padding: 20px;
+    text-align: center;
+    color: #333; /* Cor do texto */
+    font-size: 14px;
+    border-top: 1px solid #999; /* Borda superior para dar destaque */
+}
+
+footer a {
+    color: #333; /* Cor do link */
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
