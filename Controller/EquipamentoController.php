@@ -22,7 +22,7 @@ class EquipamentoController {
                 $_POST['obs'],
                 $_POST['id_adm'],
                 $_POST['data_entrada'],
-                $_POST['quantidade'] // Adicionando o campo quantidade
+                $_POST['quantidade']
             );
 
             try {
@@ -30,8 +30,7 @@ class EquipamentoController {
                 $equipamento->cadastrar($this->db);
 
                 // Redireciona para o painel do administrador
-                // header('Location: ../View/ListaEquipamento.php');
-                echo "<script>alert('Equipamento cadastrado com sucesso!'); window.location.href = '../View/ListaEquipamento.php'; </script>";
+                header('Location: ../View/adm.php?mensagem=Equipamento cadastrado com sucesso!');
                 exit();
             } catch (Exception $e) {
                 echo "Erro ao cadastrar equipamento: " . $e->getMessage();
@@ -54,7 +53,6 @@ class EquipamentoController {
             echo "Erro ao remover equipamento: " . $e->getMessage();
         }
     }
-
     // Função para atualizar equipamento
     public function atualizar($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -70,17 +68,15 @@ class EquipamentoController {
 
                 try {
                     $equipamento->atualizar($this->db);
-                    header('Location: ../View/adm.php'); // Redireciona após atualização
+                    header('Location: ../View/adm.php?mensagem=Equipamento atualizado com sucesso!');
                     exit();
                 } catch (Exception $e) {
                     echo "Erro ao atualizar equipamento: " . $e->getMessage();
                 }
+            } else {
+                echo "Erro: Equipamento não encontrado.";
             }
         }
-    }
-    
-    public function listarEquipamentosAprovados() {
-        return Aluguel::listarEquipamentosAprovados($this->db);
     }
 
     // Método para reduzir a quantidade do equipamento
@@ -112,77 +108,29 @@ class EquipamentoController {
         }
     }
 
-    // Método para aumentar a quantidade do equipamento
-public function devolverEquipamento($idEquipamento, $quantidadeDevolvida) {
-    try {
+   // Método para atualizar a quantidade do equipamento
+public function atualizarQuantidade($idEquipamento, $quantidade, $acao) {
+    if ($acao === 'aumentar') {
+        // Aumentar a quantidade
         $equipamento = Equipamento::buscarPorId($this->db, $idEquipamento);
-        
         if ($equipamento) {
-            $quantidadeAtual = $equipamento->getQuantidade();
-            $novaQuantidade = $quantidadeAtual + $quantidadeDevolvida; // Aumenta a quantidade
-
-            // Atualiza a quantidade no banco de dados
+            $novaQuantidade = $equipamento->getQuantidade() + $quantidade;
             $equipamento->setQuantidade($novaQuantidade);
             $equipamento->atualizar($this->db);
-
-            header('Location: ../View/adm.php?mensagem=Devolução realizada com sucesso!');
-            exit();
         } else {
-            throw new Exception("Equipamento não encontrado.");
+            throw new Exception("Equipamento não encontrado para aumentar quantidade.");
         }
-    } catch (Exception $e) {
-        echo "Erro ao devolver equipamento: " . $e->getMessage();
+    } elseif ($acao === 'diminuir') {
+        // Diminuir a quantidade
+        $this->reduzirQuantidade($idEquipamento, $quantidade);
+    } else {
+        throw new Exception("Ação inválida para atualizar quantidade.");
     }
 }
 
 
-    // Atualiza a quantidade chamando o método reduzirQuantidade
-    public function atualizarQuantidade($idEquipamento, $quantidadeRequisitada) {
-        $this->reduzirQuantidade($idEquipamento, $quantidadeRequisitada);
-    }
 }
 
-// Lógica para determinar a ação com base no parâmetro 'acao' na URL
-if (isset($_GET['acao'])) {
-    $controller = new EquipamentoController();
-    $acao = $_GET['acao'];
 
-    switch ($acao) {
-        case 'cadastrar':
-            $controller->cadastrar();
-            break;
 
-        case 'listar':
-            $controller->listar();
-            break;
-
-        case 'remover':
-            if (isset($_GET['id'])) {
-                $controller->remover($_GET['id']);
-            } else {
-                echo "ID do equipamento não fornecido para remoção.";
-            }
-            break;
-
-        case 'atualizar':
-            if (isset($_GET['id'])) {
-                $controller->atualizar($_GET['id']);
-            } else {
-                echo "ID do equipamento não fornecido para atualização.";
-            }
-            break;
-
-        case 'atualizarQuantidade':
-            if (isset($_GET['idEquipamento']) && isset($_GET['quantidade'])) {
-                $controller->atualizarQuantidade($_GET['idEquipamento'], $_GET['quantidade']);
-            } else {
-                echo "ID do equipamento ou quantidade não fornecidos.";
-            }
-            break;
-
-        default:
-            echo "Ação não reconhecida.";
-            break;
-    }
-}
 ?>

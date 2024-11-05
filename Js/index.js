@@ -70,3 +70,6 @@ myForm.addEventListener("submit", function (e) {
   e.preventDefault(); // You wouldn't prevent it
 });
 
+function limparCampos() {
+    document.getElementById("aluguelForm").reset();
+}

@@ -127,9 +127,9 @@ class Aluguel {
     }
 
     public static function buscarPorId($conn, $id_aluguel) {
-    $sql = "SELECT * FROM aluguel WHERE idaluguel = :id";
+    $sql = "SELECT * FROM aluguel WHERE idaluguel = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id', $id_aluguel, PDO::PARAM_INT);
+    $stmt->bindParam(1, $id_aluguel);
     $stmt->execute();
 
     $aluguel = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -182,6 +182,8 @@ class Aluguel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    // Novo método: listar equipamentos emprestados (com detalhes do solicitante e equipamento)
     public static function listarEquipamentosEmprestados($conn) {
         $sql = "
             SELECT aluguel.*, 
@@ -194,26 +196,32 @@ class Aluguel {
         $stmt = $conn->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
     public static function listarEquipamentosAprovados($conn) {
         $sql = "
         SELECT 
+            aluguel.idaluguel,
             aluguel.id_equip_aluguel AS idequipamento,
             equipamentos.nome_equipamento AS nome_equipamento,
             aluguel.quantidade_solicitada AS quantidade,
             aluguel.obs_aluguel,
             aluguel.aluguel_data_saida,
             aluguel.aluguel_data_devolucao,
-            aluguel.status_aluguel
+            aluguel.status_aluguel,
+            usuario_comum.nome_usuario AS nome_usuario
         FROM 
             aluguel
         JOIN 
             equipamentos ON aluguel.id_equip_aluguel = equipamentos.idequipamento
+        JOIN 
+            usuario_comum ON aluguel.id_usuario_aluguel = usuario_comum.id_USUARIO_COMUM
         WHERE 
             aluguel.status_aluguel = 'aprovado';
     ";
+    
         
         $stmt = $conn->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+    
 }

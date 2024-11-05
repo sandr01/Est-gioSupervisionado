@@ -27,8 +27,7 @@ class UsuarioController {
 
             try {
                 $usuario->cadastrar($this->db);
-                //header('Location: ../View/excluir_usuarios.php');  // Agora vai para tela de usuarios
-                echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href = '../View/excluir_usuarios.php'; </script>";
+                header('Location: ../View/adm.php');
                 exit();
             } catch (Exception $e) {
                 echo "Erro ao cadastrar usuário: " . $e->getMessage();

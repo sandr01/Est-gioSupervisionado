@@ -203,33 +203,27 @@ class Equipamento {
         }
     }
 
-    // Método para atualizar a quantidade do equipamento
+    private static function atualizarQuantidadeGeral($conn, $idEquipamento, $quantidade) {
+        $stmt = $conn->prepare("UPDATE equipamentos SET quantidade = :quantidade WHERE idequipamento = :idEquipamento");
+        $stmt->bindParam(':quantidade', $quantidade, PDO::PARAM_INT);
+        $stmt->bindParam(':idEquipamento', $idEquipamento, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    
     public static function atualizarQuantidade($conn, $idEquipamento, $novaQuantidade) {
         if ($novaQuantidade < 0) {
             throw new Exception("Quantidade não pode ser negativa.");
         }
-        $stmt = $conn->prepare("UPDATE equipamentos SET quantidade = :novaQuantidade WHERE idequipamento = :idEquipamento");
-        $stmt->bindParam(':novaQuantidade', $novaQuantidade, PDO::PARAM_INT);
-        $stmt->bindParam(':idEquipamento', $idEquipamento, PDO::PARAM_INT);
-        
-        return $stmt->execute();
+        return self::atualizarQuantidadeGeral($conn, $idEquipamento, $novaQuantidade);
     }
-
+    
     public static function adicionarQuantidade($conn, $idEquipamento, $quantidadeParaAdicionar) {
         if ($quantidadeParaAdicionar < 0) {
             throw new Exception("Quantidade a adicionar não pode ser negativa.");
         }
-    
-        // Obter a quantidade atual do equipamento
         $quantidadeAtual = self::obterQuantidade($conn, $idEquipamento);
         $novaQuantidade = $quantidadeAtual + $quantidadeParaAdicionar;
-    
-        // Atualizar a quantidade do equipamento
-        $stmt = $conn->prepare("UPDATE equipamentos SET quantidade = :novaQuantidade WHERE idequipamento = :idEquipamento");
-        $stmt->bindParam(':novaQuantidade', $novaQuantidade, PDO::PARAM_INT);
-        $stmt->bindParam(':idEquipamento', $idEquipamento, PDO::PARAM_INT);
-    
-        return $stmt->execute(); // Retorna verdadeiro se a execução for bem-sucedida
+        return self::atualizarQuantidadeGeral($conn, $idEquipamento, $novaQuantidade);
     }
     
 
@@ -242,5 +236,7 @@ class Equipamento {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result ? (int)$result['quantidade'] : 0; // Retorna a quantidade ou 0 se não encontrado
     }
+
+    
 }
 ?>

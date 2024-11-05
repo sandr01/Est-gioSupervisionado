@@ -65,16 +65,17 @@ $equipamentosEmprestados = $aluguelController->listarEquipamentosAprovados();
             <tr>
                 <td><?= htmlspecialchars($equipamento['idequipamento']) ?></td>
                 <td><?= htmlspecialchars($equipamento['nome_equipamento']) ?></td>
-                <td><?= htmlspecialchars($solicitacao['nome_usuario']) ?></td> 
+                <td><?= htmlspecialchars($equipamento['nome_usuario']) ?></td> 
                 <td><?= htmlspecialchars($equipamento['quantidade']) ?></td>
                 <td><?= htmlspecialchars($equipamento['aluguel_data_saida']) ?></td> 
                 <td>
                     <!-- Botão "Detalhes" que mostra informações adicionais -->
-                    <button class= "cancel-button" onclick="mostrarDetalhes(<?= htmlspecialchars(json_encode($equipamento)) ?>)">Detalhes</button>
+                    <button class="cancel-button" onclick="mostrarDetalhes(<?= htmlspecialchars(json_encode($equipamento)) ?>)">Detalhes</button>
                     
                     <!-- Botão "Devolvido" com confirmação -->
-                    <form method="post" action="../Controller/rota.php?acao=devolverEquipamento" style="display:inline;">
-                        <input type="hidden" name="idequipamento" value="<?= htmlspecialchars($equipamento['idequipamento']) ?>">
+                    <form  method="post" action="../Controller/rota.php?acao=devolverEquipamento">
+                        <input type="hidden" name="idaluguel" value="<?= htmlspecialchars($equipamento['idaluguel']) ?>">
+                        <input type="hidden" name="id_equip_aluguel" value="<?= htmlspecialchars($equipamento['idequipamento']) ?>">
                         <input type="hidden" name="quantidade_devolvida" value="<?= htmlspecialchars($equipamento['quantidade']) ?>"> <!-- Mudando para quantidade_devolvida -->
                         <button class="update-button" onclick="confirmarDevolucao(this.form)">Devolvido</button>
                     </form>
