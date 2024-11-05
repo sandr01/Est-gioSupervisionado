@@ -16,10 +16,6 @@ Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisio
 ## Descrição do Projeto
 Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e relatórios de equipamentos utilizados no setor de TI.
 
-## Documento de Requisitos 
-Um sistema de reserva para uso dos equipamentos, de modo que  os  estes  equipamentos  sejam  bem  gerenciados  pelos  gestores
-- **[Documento de Requisitos](https://github.com/sandr01/ENG2/blob/main/Docs/Documento%20de%20Requisitos%20de%20Software.pdf)**
-
 ## Tecnologias Utilizadas
 - **Frontend:** **[HTML,CSS](https://https://pos-unipar.github.io/assets/files/aula-02-f7c6a1ceb251f2c96d891a3bb17790ee.pdf/)**
 - **Backend:** **[PHP](https://www.php.net/downloads)**
