@@ -4,10 +4,9 @@ Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisio
 
 ## Equipe
 
-<a href="https://github.com/sandr01/ENG2/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sandr01/ENG2" />
+<a href="https://github.com/sandr01/Est-gioSupervisionado/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sandr01/Est-gioSupervisionado" />
 </a>
-
 
 ## Descrição do Projeto
 Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e relatórios de equipamentos utilizados no setor de TI.
