@@ -1,8 +1,10 @@
 # Estágio Supervisionado
 
 Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisionado do curso de Sistemas de Informação na Universidade Federal do Acre.
-Orientador 
-**[Wilker Luiz Gadelha Maia](https://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=452A8074A2CEF092BD968AADF9D9E43A.buscatextual_0)**
+
+## Orientador
+
+**[Wilker Luiz Gadelha Maia](http://lattes.cnpq.br/9285050920722645)**
 
 
 ## Equipe
