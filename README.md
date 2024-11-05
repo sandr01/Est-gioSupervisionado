@@ -4,24 +4,28 @@ Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisio
 
 ## Equipe
 
-<a href="https://github.com/sandr01/Est-gioSupervisionado/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sandr01/Est-gioSupervisionado" />
+<a href="https://github.com/sandr01/ENG2/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sandr01/ENG2" />
 </a>
 
 
 ## Descrição do Projeto
 Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e relatórios de equipamentos utilizados no setor de TI.
 
+## Documento de Requisitos 
+Um sistema de reserva para uso dos equipamentos, de modo que  os  estes  equipamentos  sejam  bem  gerenciados  pelos  gestores
+- **[Documento de Requisitos](https://github.com/sandr01/ENG2/blob/main/Docs/Documento%20de%20Requisitos%20de%20Software.pdf)**
+
 ## Tecnologias Utilizadas
-- **Frontend:** [Angular] (https://angular.dev/)
-- **Backend:** [SpringBoot] (https://spring.io/projects/spring-boot)
-- **Banco de Dados:** MySQL [MySQL] (https://www.mysql.com/)
+- **Frontend:** **[HTML,CSS](https://https://pos-unipar.github.io/assets/files/aula-02-f7c6a1ceb251f2c96d891a3bb17790ee.pdf/)**
+- **Backend:** **[PHP](https://www.php.net/downloads)**
+- **Banco de Dados:** **[XAMPP](https://www.apachefriends.org/pt_br/download.html)**
 
 ## Instruções para Execução
 Para executar o sistema, siga as etapas abaixo:
 
 ### 1. Configuração do Banco de Dados
-- Certifique-se de ter o MySQL instalado e em execução.
+- Certifique-se de ter o xampp instalado e em execução.
 - Crie um banco de dados com o nome desejado.
 - Importe o arquivo de script SQL.
 
@@ -29,44 +33,13 @@ Para executar o sistema, siga as etapas abaixo:
 
 <h3>Back-end</h3>
 
-A aplicação back-end pode ser iniciada pelo Spring Boot Dashboard ou com o Maven.
-
-1. Se optar pelo Maven, no prompt de comandos, a partir do diretório `./back-huerb`:
-
-a. Para iniciar a aplicação com o Maven:
-
-```console
-    mvn spring-boot:run
-```
-Ou
-
-b. Para compilar o pacote e depois executar o JAR gerado:
-
-```console
-    mvn package
-
-    java -jar target\sgcmapi.jar
-```
+A aplicação em php com xampp.
 
 > [!IMPORTANT]
 > A aplicação vai iniciar no endereço <https://localhost:9000/>, com acesso local a base de dados MySQL, por meio da porta padrão 3306, além de usuário e senha "root".
 
-<h3>Front-end</h3>
-
-As dependências do projeto não são compartilhadas no repositório. Para instalar as dependências, a partir do diretório `./front`, no prompt de comandos, digite:
-
-```console
-    npm install
-```
-
-Para iniciar a aplicação, a partir do diretório `./front`, execute o comando:
-
-```console
-    ng serve
-```
-
 > [!IMPORTANT]
-> O frontend será executado em http://localhost:4200.
+> O frontend será executado em http://localhost:8080.
 
 
 ## License
