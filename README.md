@@ -34,10 +34,10 @@ Para executar o sistema, siga as etapas abaixo:
 
 A aplicação utiliza PHP/XAMPP.
 
-> **!Importante**
+> [!IMPORTANT]
 > A aplicação será iniciada no endereço <https://localhost:3306/>, com acesso local à base de dados MySQL, por meio da porta padrão 3306, utilizando o usuário "root" e senha vazia (ou conforme configurado).
 
-> **!Importante**
+> [!IMPORTANT]
 > O frontend será executado em <http://localhost:8080>.
 
 ## Licença
