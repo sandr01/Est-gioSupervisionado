@@ -1,11 +1,10 @@
 # Estágio Supervisionado
 
-Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisionado do curso de Sistemas de Informação na Universidade Federal do Acre.
+Neste repositório está documentado todo o trabalho desenvolvido na disciplina de Estágio Supervisionado do curso de Sistemas de Informação da Universidade Federal do Acre.
 
 ## Orientador
 
 **[Wilker Luiz Gadelha Maia](http://lattes.cnpq.br/9285050920722645)**
-
 
 ## Equipe
 
@@ -14,33 +13,32 @@ Neste repositório estará tudo que fizemos na disciplina de Estágio Supervisio
 </a>
 
 ## Descrição do Projeto
-Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e relatórios de equipamentos utilizados no setor de TI.
+Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e geração de relatórios dos equipamentos utilizados no setor de TI.
 
 ## Tecnologias Utilizadas
-- **Frontend:** **[HTML,CSS](https://https://pos-unipar.github.io/assets/files/aula-02-f7c6a1ceb251f2c96d891a3bb17790ee.pdf/)**
-- **Backend:** **[PHP](https://www.php.net/downloads)**
-- **Banco de Dados:** **[XAMPP](https://www.apachefriends.org/pt_br/download.html)**
+**[HTML, CSS](https://pos-unipar.github.io/assets/files/aula-02-f7c6a1ceb251f2c96d891a3bb17790ee.pdf)**
+**[PHP](https://www.php.net/downloads)**
+**[XAMPP](https://www.apachefriends.org/pt_br/download.html)**
 
 ## Instruções para Execução
 Para executar o sistema, siga as etapas abaixo:
 
 ### 1. Configuração do Banco de Dados
-- Certifique-se de ter o xampp instalado e em execução.
-- Crie um banco de dados com o nome desejado.
-- Importe o arquivo de script SQL.
+- Certifique-se de ter o XAMPP instalado e em execução.
+- Crie um banco de dados com o nome desejado(mude o nome do banco de dados na Conexao.php).
+- Importe o arquivo de script SQL correspondente.
 
-### 2. Como inciar a aplicação
+### 2. Como iniciar a aplicação
 
 <h3>Back-end</h3>
 
-A aplicação em php com xampp.
+A aplicação utiliza PHP/XAMPP.
 
-> [!IMPORTANT]
-> A aplicação vai iniciar no endereço <https://localhost:9000/>, com acesso local a base de dados MySQL, por meio da porta padrão 3306, além de usuário e senha "root".
+> **Importante**
+> A aplicação será iniciada no endereço <https://localhost:3306/>, com acesso local à base de dados MySQL, por meio da porta padrão 3306, utilizando o usuário "root" e senha vazia (ou conforme configurado).
 
-> [!IMPORTANT]
-> O frontend será executado em http://localhost:8080.
+> **Importante**
+> O frontend será executado em <http://localhost:8080>.
 
-
-## License
-Huerb é licenciado sob a [MIT License](LICENSE).
+## Licença
+Este projeto está licenciado sob a [MIT License](LICENSE).
