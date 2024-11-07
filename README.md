@@ -15,7 +15,10 @@ Neste repositório está documentado todo o trabalho desenvolvido na disciplina 
 ## Descrição do Projeto
 Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e geração de relatórios dos equipamentos utilizados no setor de TI.
 
-![Descrição da imagem]()
+![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(1).png)
+![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(2).png)
+![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(3).png)
+![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(4).png)
 
 ## Tecnologias Utilizadas
 - **[HTML, CSS](https://pos-unipar.github.io/assets/files/aula-02-f7c6a1ceb251f2c96d891a3bb17790ee.pdf)**
