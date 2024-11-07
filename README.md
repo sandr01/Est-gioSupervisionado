@@ -12,9 +12,10 @@ Neste repositório está documentado todo o trabalho desenvolvido na disciplina 
   <img src="https://contrib.rocks/image?repo=sandr01/Est-gioSupervisionado" />
 </a>
 
-## Descrição do Projeto
+## Descrição do Projeto.
 Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e geração de relatórios dos equipamentos utilizados no setor de TI.
 
+### Telas do Projeto.
 ![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(1).png)
 ![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(2).png)
 ![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(3).png)
@@ -32,6 +33,9 @@ Para executar o sistema, siga as etapas abaixo:
 - Certifique-se de ter o XAMPP instalado e em execução.
 - Crie um banco de dados com o nome desejado(mude o nome do banco de dados na Conexao.php).
 - Importe o arquivo de script SQL correspondente.
+
+### Diagrama da Arquitetura do Projeto.
+![Descrição da imagem](https://github.com/sandr01/Est-gioSupervisionado/blob/main/artefatos/00%20(5).png)
 
 ### 2. Como iniciar a aplicação
 
