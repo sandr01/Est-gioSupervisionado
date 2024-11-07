@@ -49,7 +49,7 @@ $equipamentos = $equipamentoController->listar();
                     <td><?= htmlspecialchars($equipamento->getStatus()) ?></td>
                     <td>
                         <!-- <button class="update-button" onclick="window.location.href='../Controller/EquipamentoController.php?acao=atualizar&id=<?= $equipamento->getId() ?>'">Atualizar</button> -->
-                        <button class="cancel-button" onclick="if(confirm('Tem certeza que deseja remover este equipamento?')) { window.location.href='../Controller/EquipamentoController.php?acao=remover&id=<?= $equipamento->getId() ?>' }">Remover</button>
+                        <button class="cancel-button" onclick="if(confirm('Tem certeza que deseja remover este equipamento?')) { window.location.href='../Controller/rota.php?acao=removerEquipamento&id=<?= $equipamento->getId() ?>' }">Remover</button>
                     </td>
                 </tr>
             <?php endforeach; ?>

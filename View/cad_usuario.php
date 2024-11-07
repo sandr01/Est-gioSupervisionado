@@ -72,10 +72,61 @@ if (!isset($_SESSION['admin'])) {
                         
                         </form>
                         <script>
-                        function confirmarCadastro() {
-                            return confirm("Tem certeza de que deseja cadastrar este usuário?");
-                        }
-                        </script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const form = document.getElementById('formCadastro');
+                                    const nomeInput = document.getElementById('nome_usuario');
+                                    const cpfInput = document.getElementById('cpf_usuario');
+                                    const telefoneInput = document.getElementById('contato_usuario');
+                                    const dataNascimentoInput = document.getElementById('data_nasc_usuario');
+
+                                    // Validação do campo "Nome" (sem números)
+                                    nomeInput.addEventListener('input', function() {
+                                        nomeInput.value = nomeInput.value.replace(/[0-9]/g, '');
+                                    });
+
+                                    // Validação e formatação do CPF
+                                    cpfInput.addEventListener('input', function() {
+                                        let value = cpfInput.value.replace(/\D/g, '');
+                                        value = value.replace(/(\d{3})(\d)/, '$1.$2')
+                                                    .replace(/(\d{3})(\d)/, '$1.$2')
+                                                    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+                                        cpfInput.value = value;
+                                    });
+
+                                    // Validação do campo "Contato" (apenas números no formato (00) 0 0000-0000)
+                                    telefoneInput.addEventListener('input', function() {
+                                        let value = telefoneInput.value.replace(/\D/g, '');
+                                        if (value.length > 11) value = value.substring(0, 11);
+                                        if (value.length > 2) value = value.replace(/^(\d{2})(\d)/, '($1) $2');
+                                        if (value.length > 7) value = value.replace(/^(\(\d{2}\) \d)(\d{4})(\d{4})$/, '$1 $2-$3');
+                                        telefoneInput.value = value;
+                                    });
+
+                                    // Validação da data de nascimento (18 anos e não futuro)
+                                    dataNascimentoInput.addEventListener('input', function() {
+                                        const today = new Date();
+                                        const birthDate = new Date(dataNascimentoInput.value);
+                                        let age = today.getFullYear() - birthDate.getFullYear();
+                                        const month = today.getMonth() - birthDate.getMonth();
+
+                                        if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+                                            age--;
+                                        }
+
+                                        if (age < 18 || birthDate > today) {
+                                            alert('Data de nascimento inválida. O usuário deve ter pelo menos 18 anos e a data não pode estar no futuro.');
+                                            dataNascimentoInput.value = '';
+                                        }
+                                    });
+
+                                    // Exibir mensagem de confirmação ao enviar o formulário
+                                    form.addEventListener('submit', function(event) {
+                                        event.preventDefault(); // Impede o envio para exibir a mensagem primeiro
+                                        alert('Usuário cadastrado com sucesso!');
+                                        form.submit(); // Envia o formulário após a confirmação
+                                    });
+                                });
+                            </script>
                 </div>
         </div>
     </div>

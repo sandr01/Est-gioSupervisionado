@@ -11,10 +11,11 @@ if (!isset($_SESSION['admin'])) {
 $usuarioController = new UsuarioController();
 $usuarios = $usuarioController->listar(); 
 
+// Excluir usuário
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $usuarioController->excluir($id); 
-    header('Location: excluir_usuarios.php'); 
+    header('Location: excluir_usuarios.php'); // Redireciona para a mesma página
     exit();
 }
 ?>
@@ -60,7 +61,7 @@ if (isset($_GET['delete'])) {
                         <td><?= htmlspecialchars($usuario->getNome()) ?></td>
                         <td><?= htmlspecialchars($usuario->getEmail()) ?></td>
                         <td>
-                            <button class="cancel-button" href="?delete=<?= $usuario->getId() ?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</button>
+                        <a class="cancel-button" href="?delete=<?= $usuario->getId() ?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        nav {
+            background-color: #78797a;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #454546;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #78797a;
+            min-width: 200px;
+            z-index: 1;
+        }
+        nav ul li ul li {
+            float: none;
+        }
+        nav ul li ul li a {
+            padding: 12px 16px;
+            text-align: left;
+        }
+        nav ul li ul li a:hover {
+            background-color: #454546;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li:last-child {
+            float: right;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #ffffff;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #78797a;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a>CONTROLE DE ESTOQUE</a></li>
+            <li><a href="#inicio">Página Inicial</a></li>
+            <li>
+                <a href="#cadastros">Cadastros</a>
+                <ul>
+                    <li><a href="#cadastro-equipamento">Cadastro de Equipamento</a></li>
+                    <li><a href="#cadastro-setor">Cadastro de Setor</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#consultas">Consultas</a>
+                <ul>
+                    <li><a href="#consulta-equipamento">Consulta de Equipamento</a></li>
+                    <li><a href="#consulta-setor">Consulta de Setor</a></li>
+                </ul>
+            </li>
+            <li><a href="#sair">Sair</a></li>
+        </ul>
+    </nav>
+
+    <h1>Resumo</h1>
+    <h3>______________________________</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Data Solicitada</th>
+                <th>Status</th>
+                <th>Setor</th>
+                <th>Tipo</th>
+                <th>Data de Entrega</th>
+                <th>Prioridade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01/09/2024</td>
+                <td>Pendente</td>
+                <td>Emergência</td>
+                <td>Equipamento Médico</td>
+                <td>05/09/2024</td>
+                <td>Alta</td>
+            </tr>
+            <tr>
+                <td>28/08/2024</td>
+                <td>Entregue</td>
+                <td>UTI</td>
+                <td>Medicamentos</td>
+                <td>30/08/2024</td>
+                <td>Alta</td>
+            </tr>
+            <tr>
+                <td>02/09/2024</td>
+                <td>Em Processamento</td>
+                <td>Cirurgia</td>
+                <td>Instrumentos Cirúrgicos</td>
+                <td>08/09/2024</td>
+                <td>Alta</td>
+            </tr>
+            <tr>
+                <td>31/08/2024</td>
+                <td>Cancelado</td>
+                <td>Enfermaria</td>
+                <td>Material de Limpeza</td>
+                <td>N/A</td>
+                <td>Baixa</td>
+            </tr>
+            <tr>
+                <td>29/08/2024</td>
+                <td>Entregue</td>
+                <td>Laboratório</td>
+                <td>Reagentes</td>
+                <td>01/09/2024</td>
+                <td>Média</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

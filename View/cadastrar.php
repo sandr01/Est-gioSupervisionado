@@ -6,8 +6,9 @@ if (!isset($_SESSION['admin'])) {
     header('Location: login_adm.html');
     exit();
 }
+// Captura o ID do administrador da sessão
+$id_adm = $_SESSION['admin']['id_usuario_administrador']; // Altere conforme sua estrutura de sessão
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -40,10 +41,18 @@ if (!isset($_SESSION['admin'])) {
                             <input type="text" id="nome" name="nome" placeholder="Digite o nome do equipamento" required>
 
                             <label for="tipo">Tipo do Equipamento:</label>
-                            <input type="text" id="tipo" name="tipo" placeholder="Digite o tipo do equipamento" required>
+                            <select id="tipo" name="tipo" required>
+                                <option value="Desktop">Desktop</option>
+                                <option value="Periférico">Periférico</option>
+                                <option value="Notebook">Notebook</option>
+                                <option value="Outros">Outros</option>
+                            </select>
 
                             <label for="status">Status do Equipamento:</label>
-                            <input type="text" id="status" name="status" placeholder="Digite o status do equipamento" required>
+                            <select id="status" name="status" required>
+                                <option value="Funcional">Funcional</option>
+                                <option value="Não funcional">Não funcional</option>
+                            </select>
 
                             <label for="patrimonio">Número de Patrimônio:</label>
                             <input type="text" id="patrimonio" name="patrimonio" placeholder="Digite o número de patrimônio" required>
@@ -52,10 +61,10 @@ if (!isset($_SESSION['admin'])) {
                             <textarea id="obs" name="obs" rows="4" placeholder="Digite quaisquer observações"></textarea>
 
                             <label for="id_adm">ID do Administrador:</label>
-                            <input type="text" id="id_adm" name="id_adm" placeholder="Digite o ID do administrador" required>
+                            <input type="text" id="id_adm" name="id_adm" placeholder="Digite o ID do administrador" value="<?php echo $id_adm; ?>" readonly required>
 
                             <label for="data_entrada">Data de Entrada:</label>
-                            <input type="date" id="data_entrada" name="data_entrada" required>
+                            <input type="date" id="data_entrada" name="data_entrada" required max="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>">
 
                             <label for="quantidade">Quantidade:</label>
                             <input type="number" name="quantidade" id="quantidade" placeholder="Digite a quantidade" required min="1">
