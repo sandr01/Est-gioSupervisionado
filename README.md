@@ -15,6 +15,8 @@ Neste repositório está documentado todo o trabalho desenvolvido na disciplina 
 ## Descrição do Projeto
 Este projeto é uma aplicação web que visa gerenciar o controle de estoque de equipamentos, permitindo o cadastro, solicitação e geração de relatórios dos equipamentos utilizados no setor de TI.
 
+![Descrição da imagem]()
+
 ## Tecnologias Utilizadas
 - **[HTML, CSS](https://pos-unipar.github.io/assets/files/aula-02-f7c6a1ceb251f2c96d891a3bb17790ee.pdf)**
 - **[PHP](https://www.php.net/downloads)**
