@@ -21,7 +21,7 @@
 
                         <button type="submit">Entrar</button>
                     </form>
-                    <p>Esqueceu a senha? <a href="login_adm.php">Clique aqui</a></p>
+                    <p>Usuuario Administrador!<a href="login_adm.php">Clique aqui</a></p>
         </div>
 
     </div>

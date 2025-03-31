@@ -11,7 +11,7 @@
     <div class="login-container">
         <div class="login-form">
                 <img src="../img/login.png" alt="Imagem de Login" class="login-image">
-                    <h2>Login do Administrador</h2>
+                    <h2>Login</h2>
                     <form action="../Controller/rota.php?acao=logar" method="POST">
                         <div class="form-group">
                             <label for="email_administrador">E-mail:</label>
@@ -26,7 +26,7 @@
                         </div>
                     </form>
                     <div class="footer">
-                        <p>Esqueceu a senha? <a href="login_usuario.php">Clique aqui</a></p>
+                        <p>Usuário solicitante!<a href="login_usuario.php">Clique aqui</a></p>
                     </div>
                 </div>
         </div>
